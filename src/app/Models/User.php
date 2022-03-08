@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -36,4 +36,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Slackチャンネルに対する通知をルートする
+     *
+     * @param  \Illuminate\Notifications\Notification  $notification
+     * @return string
+     */
+    public function routeNotificationForSlack($notification)
+    {
+        return config('slack.notification_webhook_url');
+    }
 }
