@@ -7,7 +7,7 @@ use App\Models\MailMagazine;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class RegisterMailMagazine
+class RegisterMailMagazine implements ShouldQueue
 {
     /**
      * Create the event listener.

@@ -7,7 +7,7 @@ use App\Notifications\RegisterUserSlack;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class RegisterUserNotification
+class RegisterUserNotification implements ShouldQueue
 {
     /**
      * Create the event listener.
